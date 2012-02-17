@@ -87,6 +87,14 @@
 		
 		$('#sidebarContent').wcfSidebar();
 		
+		// Change opacity of topmenu. The further you scroll the more opaque the menu is.
+		$(window).scroll(function () {
+			var $opacity = .4 + Math.min(.6, $(window).scrollTop() / 350);
+			$('#topMenu').css({
+				backgroundColor: 'rgba(0, 0, 0, '+$opacity+')'
+			});
+		});
+		
 		{event name='javascriptInit'}
 	});
 	//]]>
